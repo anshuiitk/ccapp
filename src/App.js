@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import CardList from "./CardList";
 import CardEdit from "./CardEdit";
+import CardAddNList from "./CardAddNList";
 import reducers from "./reducers";
 
 const store = createStore(
@@ -24,7 +25,8 @@ class App extends Component {
             <Switch>
               <Route path="/cards" component={CardList} />
               <Route path="/card/:id" component={CardEdit} />
-              <Redirect to="/cards" />
+              <Route path="/add" component={CardAddNList} />
+              <Redirect to="/add" component={CardAddNList} />
             </Switch>
           </div>
         </BrowserRouter>

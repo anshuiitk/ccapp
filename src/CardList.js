@@ -5,7 +5,7 @@ import { cardsLoaded } from "./actions";
 
 class CardList extends Component {
   componentDidMount() {
-    fetch("/api/cards")
+    fetch("/api/getAll")
       .then(rsp => rsp.json())
       .then(cards => this.props.cardsLoaded(cards));
   }
