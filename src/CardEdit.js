@@ -44,7 +44,7 @@ class CardEdit extends Component {
 
     return (
       <form>
-        <InputText onChange={this.onChange} prop="name" value={card.name}>
+        <InputText prop="name" value={card.name}>
           Name
         </InputText>
         <InputText onChange={this.onChange} prop="number" value={card.number}>

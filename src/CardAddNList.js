@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import CardRow from "./CardRow";
 import { cardsLoaded } from "./actions";
+import { cardLoaded } from "./actions";
 import { currentCardPropChanged } from "./actions";
 import InputText from "./InputText";
 import { Link } from "react-router-dom";
@@ -19,6 +20,8 @@ class CardAddNList extends Component {
     this.props.currentCardPropChanged(e.prop, e.value);
   };
 
+  onChange1 = e => {
+  };
   save = e => {
     e.preventDefault();
     console.log(this.props.card);
@@ -35,7 +38,9 @@ class CardAddNList extends Component {
   };
 
   render() {
-      
+     
+    const card = {name : "Name", number : "XXXX XXXX XXXX XXXX", limit : 5000};
+
     const rows = this.props.cards.map(card => (
       <CardRow key={card.id} card={card} />
     ));
@@ -44,7 +49,7 @@ class CardAddNList extends Component {
       <div>
         <div>
           <form>
-            <InputText onChange={this.onChange} prop="name" value={card.name}>
+            <InputText onChange={this.onChange1} prop="name" >
               Name
             </InputText>
             <InputText onChange={this.onChange} prop="number" value={card.number}>
@@ -74,7 +79,10 @@ class CardAddNList extends Component {
             <thead>
               <tr>
                 <th>Name</th>
-                <th />
+                <th>Number</th>
+                <th>Limit</th>
+                <th>balance</th>
+                <th>action</th>
               </tr>
             </thead>
             <tbody>{rows}</tbody>
