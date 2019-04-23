@@ -7,8 +7,6 @@ import { currentCardPropChanged } from "./actions";
 import InputText from "./InputText";
 import { Link } from "react-router-dom";
 
-
-
 class CardAddNList extends Component {
   componentDidMount() {
     fetch("/api/getAll")
@@ -20,8 +18,7 @@ class CardAddNList extends Component {
     this.props.currentCardPropChanged(e.prop, e.value);
   };
 
-  onChange1 = e => {
-  };
+  onChange1 = e => {};
   save = e => {
     e.preventDefault();
     console.log(this.props.card);
@@ -38,28 +35,35 @@ class CardAddNList extends Component {
   };
 
   render() {
-     
-    const card = {name : "Name", number : "XXXX XXXX XXXX XXXX", limit : 5000};
+    const card = { name: "Name", number: "XXXX XXXX XXXX XXXX", limit: 5000 };
 
-    const rows = this.props.cards.map(card => (
-      <CardRow key={card.id} card={card} />
+    const rows = this.props.cards.map((card, index) => (
+      <CardRow key={index} card={card} />
     ));
 
     return (
       <div>
         <div>
           <form>
-            <InputText onChange={this.onChange1} prop="name" >
+            <InputText onChange={this.onChange} prop="name">
               Name
             </InputText>
-            <InputText onChange={this.onChange} prop="number" value={card.number}>
+            <InputText
+              onChange={this.onChange}
+              prop="number"
+              value={card.number}
+            >
               Card Number
             </InputText>
             <InputText onChange={this.onChange} prop="limit" value={card.limit}>
               Limit
             </InputText>
             <div className="btn-group">
-              <button type="submit" onClick={this.save} className="btn btn-primary">
+              <button
+                type="submit"
+                onClick={this.save}
+                className="btn btn-primary"
+              >
                 Add
               </button>
               <Link className="btn btn-danger" to="/cards">
@@ -69,10 +73,10 @@ class CardAddNList extends Component {
           </form>
         </div>
         <div>
-          <br/>
-          <br/>
-          <br/>
-            Existing Cards
+          <br />
+          <br />
+          <br />
+          Existing Cards
         </div>
         <div>
           <table className="table table-bordered table-striped">
@@ -87,8 +91,8 @@ class CardAddNList extends Component {
             </thead>
             <tbody>{rows}</tbody>
           </table>
-          </div>
         </div>
+      </div>
     );
   }
 }
@@ -105,8 +109,11 @@ const mapDispatchToProps = dispatch => {
     cardLoaded: card => dispatch(cardLoaded(card)),
     cardsLoaded: cards => dispatch(cardsLoaded(cards)),
     currentCardPropChanged: (prop, value) =>
-    dispatch(currentCardPropChanged(prop, value))
+      dispatch(currentCardPropChanged(prop, value))
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CardAddNList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CardAddNList);
