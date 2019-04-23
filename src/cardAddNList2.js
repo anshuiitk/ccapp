@@ -49,6 +49,8 @@ class CardAddNList2 extends React.PureComponent {
       <React.Fragment>
         <form>
           <InputText2
+            inputType={"text"}
+            maxLength={"35"}
             onChange={text => {
               this.setState({ name: text.target.value });
             }}
@@ -57,6 +59,8 @@ class CardAddNList2 extends React.PureComponent {
             Name
           </InputText2>
           <InputText2
+            maxLength={"19"}
+            inputType={"number"}
             onChange={text => {
               this.setState({ cardNumber: text.target.value });
             }}
@@ -66,30 +70,24 @@ class CardAddNList2 extends React.PureComponent {
             Card Number
           </InputText2>
           <InputText2
+            maxLength={"10"}
             onChange={text => {
-              let value = text.target.value;
-              if (value.length <= 10) {
-                this.setState({ limit: value });
-              } else {
-                alert("Limit can only be less then or equal to 10 digits");
-              }
+              this.setState({ limit: text.target.value });
             }}
             value={this.state.limit}
             placeholder={"0"}
+            inputType={"number"}
           >
             Limit
           </InputText2>
           <InputText2
+            maxLength={"10"}
             onChange={text => {
-              let value = text.target.value;
-              if (value.length <= 10) {
-                this.setState({ balance: value });
-              } else {
-                alert("Balance can only be less then or equal to 10 digits");
-              }
+              this.setState({ balance: text.target.value });
             }}
             value={this.state.balance}
             placeholder={"0"}
+            inputType={"number"}
           >
             Balance
           </InputText2>

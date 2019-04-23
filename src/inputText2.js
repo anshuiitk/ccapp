@@ -8,11 +8,12 @@ class InputText2 extends Component {
       <div className="form-group">
         <label>{this.props.children}</label>
         <input
-          type="text"
           className="form-control"
           value={value}
           onChange={this.props.onChange}
           placeholder={this.props.placeholder}
+          maxLength={this.props.maxLength}
+          type={this.props.inputType}
         />
       </div>
     );
