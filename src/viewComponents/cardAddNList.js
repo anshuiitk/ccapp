@@ -2,7 +2,7 @@ import React from "react";
 import InputText from "../commonComponents/inputText";
 import { Link } from "react-router-dom";
 import CardTableComponent from "./cardTableComponent";
-class CardAddNList2 extends React.PureComponent {
+class CardAddNList extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -124,4 +124,4 @@ class CardAddNList2 extends React.PureComponent {
     );
   }
 }
-export default CardAddNList2;
+export default CardAddNList;
