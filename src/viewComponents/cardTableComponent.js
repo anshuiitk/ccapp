@@ -1,7 +1,7 @@
 import React from "react";
 import CardRow from "../commonComponents/cardRow";
 
-class CardTableComponent extends React.Component {
+class CardTableComponent extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = { cardList: [] };

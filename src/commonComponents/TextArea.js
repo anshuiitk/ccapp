@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 
-class TextArea extends Component {
+class TextArea extends React.PureComponent {
   static defaultProps = {
     value: ""
   };

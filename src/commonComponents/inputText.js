@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 
-class InputText extends Component {
+class InputText extends React.PureComponent {
   render() {
     const { value } = this.props;
 
