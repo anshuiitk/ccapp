@@ -1,5 +1,5 @@
 import React from "react";
-import CardRow2 from "./cardRow2";
+import CardRow from "../commonComponents/cardRow";
 
 class CardTableComponent extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class CardTableComponent extends React.Component {
 
   _renderCardRows = () => {
     let rows = this.state.cardList.map((card, index) => (
-      <CardRow2 key={index} card={card} />
+      <CardRow key={index} card={card} />
     ));
 
     return rows;

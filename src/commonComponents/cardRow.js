@@ -1,6 +1,5 @@
 import React from "react";
-
-class CardRow2 extends React.PureComponent {
+class CardRow extends React.PureComponent {
   render() {
     return (
       <React.Fragment>
@@ -15,4 +14,4 @@ class CardRow2 extends React.PureComponent {
   }
 }
 
-export default CardRow2;
+export default CardRow;

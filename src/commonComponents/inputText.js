@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class InputText2 extends Component {
+class InputText extends Component {
   render() {
     const { value } = this.props;
 
@@ -12,12 +12,12 @@ class InputText2 extends Component {
           value={value}
           onChange={this.props.onChange}
           placeholder={this.props.placeholder}
-          maxLength={this.props.maxLength}
-          type={this.props.inputType}
+          maxLength={this.props.maxlength}
+          type={this.props.inputtype}
         />
       </div>
     );
   }
 }
 
-export default InputText2;
+export default InputText;
