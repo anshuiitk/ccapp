@@ -15,7 +15,7 @@ class CardAddNList extends React.PureComponent {
   }
 
   _saveApi = card => {
-    fetch("http://localhost:8080/add", {
+    fetch("/add", {
       headers: {
         "Content-Type": "application/json"
       },
