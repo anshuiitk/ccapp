@@ -58,7 +58,7 @@ class CardAddNList2 extends React.PureComponent {
       <form>
         <InputText
           inputtype={"text"}
-          maxlength={"35"}
+          maxlength={"30"}
           onChange={text => {
             this.setState({ name: text.target.value });
           }}
@@ -108,7 +108,7 @@ class CardAddNList2 extends React.PureComponent {
             style={{ marginLeft: 20 }}
             to="cancel"
           >
-            Cancel
+            Clear
           </Link>
         </div>
       </form>
