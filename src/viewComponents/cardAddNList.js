@@ -15,19 +15,19 @@ class CardAddNList extends React.PureComponent {
   }
 
   _saveApi = card => {
-    fetch("/add", {
+    fetch("http://localhost:8080/add", {
       headers: {
         "Content-Type": "application/json"
       },
       method: "put",
       body: JSON.stringify(card)
+    }).then(res => res.text(),
+    err => {
+      alert("Something went wrong on server!");
     }).then(
-      res => {
+      body => {
         this.setState({ refresh: Math.random() });
-        alert("Card Added Successfuly!");
-      },
-      err => {
-        alert("Something went wrong!");
+        alert(body);
       }
     );
   };

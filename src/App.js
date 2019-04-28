@@ -10,8 +10,8 @@ class App extends Component {
         <div className="container">
           <h1>Add Credit Cards here!</h1>
           <Switch>
-            <Route path="/add" component={CardAddNList} />
-            <Redirect to="/add" component={CardAddNList} />
+            <Route path="/addNList" component={CardAddNList} />
+            <Redirect to="/addNList" component={CardAddNList} />
           </Switch>
         </div>
       </BrowserRouter>
